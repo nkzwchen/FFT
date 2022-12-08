@@ -4,7 +4,8 @@
 #include <vector>
 #include <chrono>
 using namespace std::chrono;
-// #define PRINT_OUTPUT
+#define PRINT_INPUT
+#define PRINT_OUTPUT
 void test_case(int squence_length, std::vector<int>& decompose_factor, int test_case_num){
     float* ref_x = (float*)malloc(2 * squence_length * sizeof(float));
     float* x = (float*)malloc(2 * squence_length * sizeof(float));

@@ -29,15 +29,14 @@ char* read_cl_file(const char* file_name){
     }
     
 }
-int relative_error(float a, float b){
-    // return abs(a - b) / (abs(b) + 1e-8);
+int abs_error(float a, float b){
     return abs(a - b);
 }
 int check_correctness(const float* output, const float* ref_output, int squence_length){
     int correct_num = 0;
     for(int i = 0; i < squence_length; i++){
-        if((relative_error(output[2 * i], ref_output[2 * i]) < ERROR_TOLERANCE) &&
-        (relative_error(output[2 * i + 1], ref_output[2 * i + 1]) < ERROR_TOLERANCE)){
+        if((abs_error(output[2 * i], ref_output[2 * i]) < ERROR_TOLERANCE) &&
+        (abs_error(output[2 * i + 1], ref_output[2 * i + 1]) < ERROR_TOLERANCE)){
             correct_num += 1;
         }
         // else{
