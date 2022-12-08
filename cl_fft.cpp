@@ -5,7 +5,7 @@
 #include <clFFT.h>
 #include "fft.h"
 
-void cl_fft(float* X){
+void cl_fft(float* X, int squence_length){
 
     cl_int err;
     cl_platform_id platform = 0;
@@ -16,7 +16,7 @@ void cl_fft(float* X){
     cl_mem bufX;
     cl_event event = NULL;
     int ret = 0;
-    size_t N = SQUENCE_LENGTH;
+    size_t N = squence_length;
 
     /* FFT library realted declarations */
     clfftPlanHandle planHandle;

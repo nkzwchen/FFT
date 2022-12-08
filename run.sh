@@ -1,2 +1,2 @@
 make
-./fft
+./test $*
